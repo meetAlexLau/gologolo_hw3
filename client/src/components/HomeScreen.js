@@ -15,7 +15,6 @@ const GET_LOGOS = gql`
 `;
 
 class HomeScreen extends Component {
-
     render() {
         return (
             <Query pollInterval={500} query={GET_LOGOS}>
@@ -27,20 +26,27 @@ class HomeScreen extends Component {
                         <div className="container row">
                             <div className="col s4">
                                 <h3>Recent Work</h3>
-                                {data.logos.map((logo, index) => (
+
+                                {data.logos.sort((a,b) => new Date(b.lastUpdate).getTime() - new Date(a.lastUpdate).getTime()).map((logo, index) => (
                                     <div key={index} className='home_logo_link'
                                         style={{ cursor: "pointer" }}>
-                                        <Link to={`/view/${logo._id}`}>{logo.text}</Link>
+                                        <Link to={`/view/${logo._id}`}>
+                                            <button type="button" class="btn btn-outline-dark">
+                                            {logo.text}
+                                            </button></Link>
                                     </div>
                                 ))}
                             </div>
                             <div className="col s8">
                                 <div id="home_banner_container">
-                                    @todo<br />
-                                    List Maker
+                                    GoLogoLo<br />
+                                    Logo Maker
                                 </div>
                                 <div>
-                                    <Link id="add_logo_button" to="/create">Add Logo</Link>
+                                    <Link id="add_logo_button" to="/create">
+                                        <button type="button" class="btn btn-outline-primary">
+                                        Add Logo
+                                        </button></Link>
                                 </div>
                             </div>
                         </div>
