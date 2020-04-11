@@ -48,6 +48,11 @@ class CreateLogoScreen extends Component {
     }
     render() {
         let text, color, fontSize,backgroundColor, borderColor, borderRadius, borderWidth, padding, margin;
+        if(this.state.activated == false) {
+            this.setState({logo: {text: "Logo Name", fontSize: 16, color: "#000000", backgroundColor: "#ffffff", borderColor: "#000000",
+                            borderRadius: 0, borderWidth: 0, padding: 0, margin: 0}});
+            this.state.activated = true;
+        }
         return (
             <Mutation mutation={ADD_LOGO} onCompleted={() => this.props.history.push('/')}>
                 {(addLogo, { loading, error }) => (
@@ -84,7 +89,8 @@ class CreateLogoScreen extends Component {
                                                 }} placeholder="Text" 
                                                 onChange = {(e) => this.setState({logo: {text: e.target.value, color: this.state.logo.color, fontSize: this.state.logo.fontSize, backgroundColor: this.state.logo.backgroundColor,
                                                     borderColor: this.state.logo.borderColor, borderRadius: this.state.logo.borderRadius, borderWidth: this.state.logo.borderWidth,
-                                                    padding: this.state.logo.padding, margin: this.state.logo.margin}}, console.log(this.state.logo))}/>
+                                                    padding: this.state.logo.padding, margin: this.state.logo.margin}}, console.log(this.state.logo))}
+                                                    defaultValue = {this.state.logo.text}/>
                                             </div>
                                             <div className="form-group">
                                                 <label htmlFor="color">Color:</label>
@@ -97,12 +103,13 @@ class CreateLogoScreen extends Component {
                                             </div>
                                             <div className="form-group">
                                                 <label htmlFor="fontSize">Font Size:</label>
-                                                <input type="number" className="form-control" name="fontSize" min="0" max="100" ref={node => {
+                                                <input type="number" className="form-control" name="fontSize" min="1" max="100" ref={node => {
                                                     fontSize = node;
                                                 }} placeholder="Font Size" 
                                                 onChange = {(e) => this.setState({logo: {text: this.state.logo.text, color: this.state.logo.color, fontSize: e.target.value, backgroundColor: this.state.logo.backgroundColor,
                                                     borderColor: this.state.logo.borderColor, borderRadius: this.state.logo.borderRadius, borderWidth: this.state.logo.borderWidth,
-                                                    padding: this.state.logo.padding, margin: this.state.logo.margin}}, console.log(e.target.value))}/>
+                                                    padding: this.state.logo.padding, margin: this.state.logo.margin}}, console.log(e.target.value))}
+                                                    defaultValue = {this.state.logo.fontSize}/>
                                             </div>
                                             <div className="form-group">
                                                 <label htmlFor="backgroundColor">Background Color:</label>
@@ -111,7 +118,8 @@ class CreateLogoScreen extends Component {
                                                 }} placeholder="BackgroundColor"
                                                 onChange = {(e) => this.setState({logo: {text: this.state.logo.text, color: this.state.logo.color, fontSize: this.state.logo.fontSize, backgroundColor: e.target.value,
                                                     borderColor: this.state.logo.borderColor, borderRadius: this.state.logo.borderRadius, borderWidth: this.state.logo.borderWidth,
-                                                    padding: this.state.logo.padding, margin: this.state.logo.margin}})}/>
+                                                    padding: this.state.logo.padding, margin: this.state.logo.margin}})}
+                                                    defaultValue = {this.state.logo.backgroundColor}/>
                                             </div>
                                             <div className="form-group">
                                                 <label htmlFor="borderColor">Border Color:</label>
@@ -120,7 +128,8 @@ class CreateLogoScreen extends Component {
                                                 }} placeholder = "Border Color"
                                                 onChange = {(e) => this.setState({logo: {text: this.state.logo.text, color: this.state.logo.color, fontSize: this.state.logo.fontSize, backgroundColor: this.state.logo.backgroundColor,
                                                     borderColor: e.target.value, borderRadius: this.state.logo.borderRadius, borderWidth: this.state.logo.borderWidth,
-                                                    padding: this.state.logo.padding, margin: this.state.logo.margin}})}/>
+                                                    padding: this.state.logo.padding, margin: this.state.logo.margin}})}
+                                                    defaultValue = {this.state.logo.borderColor}/>
                                             </div>
                                             <div className="form-group">
                                                 <label htmlFor="borderRadius">Border Radius:</label>
@@ -129,7 +138,8 @@ class CreateLogoScreen extends Component {
                                                 }} placeholder = "Border Radius"
                                                 onChange = {(e) => this.setState({logo: {text: this.state.logo.text, color: this.state.logo.color, fontSize: this.state.logo.fontSize, backgroundColor: this.state.logo.backgroundColor,
                                                     borderColor: this.state.logo.borderColor, borderRadius: e.target.value, borderWidth: this.state.logo.borderWidth,
-                                                    padding: this.state.logo.padding, margin: this.state.logo.margin}})}/>
+                                                    padding: this.state.logo.padding, margin: this.state.logo.margin}})}
+                                                    defaultValue = "0"/>
                                             </div>
                                             <div className="form-group">
                                                 <label htmlFor="borderWidth">Border Width:</label>
@@ -138,7 +148,8 @@ class CreateLogoScreen extends Component {
                                                 }} placeholder = "Border Width"
                                                 onChange = {(e) => this.setState({logo: {text: this.state.logo.text, color: this.state.logo.color, fontSize: this.state.logo.fontSize, backgroundColor: this.state.logo.backgroundColor,
                                                     borderColor: this.state.logo.borderColor, borderRadius: this.state.logo.borderRadius, borderWidth: e.target.value,
-                                                    padding: this.state.logo.padding, margin: this.state.logo.margin}})}/>
+                                                    padding: this.state.logo.padding, margin: this.state.logo.margin}})}
+                                                    defaultValue = "0"/>
                                             </div>
                                             <div className="form-group">
                                                 <label htmlFor="Padding">Padding:</label>
@@ -147,7 +158,8 @@ class CreateLogoScreen extends Component {
                                                 }} placeholder = "Padding"
                                                 onChange = {(e) => this.setState({logo: {text: this.state.logo.text, color: this.state.logo.color, fontSize: this.state.logo.fontSize, backgroundColor: this.state.logo.backgroundColor,
                                                     borderColor: this.state.logo.borderColor, borderRadius: this.state.logo.borderRadius, borderWidth: this.state.logo.borderWidth,
-                                                    padding: e.target.value, margin: this.state.logo.margin}})}/>
+                                                    padding: e.target.value, margin: this.state.logo.margin}})}
+                                                    defaultValue ="0"/>
                                             </div>
                                             <div className="form-group">
                                                 <label htmlFor="Margin">Margin:</label>
@@ -156,7 +168,8 @@ class CreateLogoScreen extends Component {
                                                 }} placeholder = "Margin"
                                                 onChange = {(e) => this.setState({logo: {text: this.state.logo.text, color: this.state.logo.color, fontSize: this.state.logo.fontSize, backgroundColor: this.state.logo.backgroundColor,
                                                     borderColor: this.state.logo.borderColor, borderRadius: this.state.logo.borderRadius, borderWidth: this.state.logo.borderWidth,
-                                                    padding: this.state.logo.padding, margin: e.target.value}})}/>
+                                                    padding: this.state.logo.padding, margin: e.target.value}})}
+                                                    defaultValue = "0"/>
                                             </div>
                                             <div class = "col-sm">
                                                 <center>

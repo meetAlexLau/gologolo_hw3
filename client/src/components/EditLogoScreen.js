@@ -133,7 +133,7 @@ class EditLogoScreen extends Component {
                                                         </div>
                                                         <div className="form-group">
                                                             <label htmlFor="fontSize">Font Size:</label>
-                                                            <input type="number" className="form-control" name="fontSize" min = "0" max = "100" ref={node => {fontSize = node;}}
+                                                            <input type="number" className="form-control" name="fontSize" min = "1" max = "100" ref={node => {fontSize = node;}}
                                                             onChange = {(e) => this.setState({logo: {text: this.state.logo.text, color: this.state.logo.color, fontSize: e.target.value, backgroundColor: this.state.logo.backgroundColor,
                                                                 borderColor: this.state.logo.borderColor, borderRadius: this.state.logo.borderRadius, borderWidth: this.state.logo.borderWidth,
                                                                 padding: this.state.logo.padding, margin: this.state.logo.margin}}, console.log(e.target.value))}

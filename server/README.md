@@ -7,6 +7,9 @@ query {
     borderColor
     borderRadius
     borderWidth
+    padding
+    margin
+    lastUpdate
   }
 }
 
@@ -19,6 +22,8 @@ query {
     borderColor
     borderRadius
     borderWidth
+    padding
+    margin
     lastUpdate
   } 
 }
@@ -52,6 +57,21 @@ mutation{
     padding: 0
     margin: 0
   ) {
+    lastUpdate
+  }
+}
+mutation {
+  removeLogo(id: "") {
+    _id
+    text
+    color
+    fontSize
+    backgroundColor
+    borderColor
+    borderRadius
+    borderWidth
+    padding
+    margin
     lastUpdate
   }
 }

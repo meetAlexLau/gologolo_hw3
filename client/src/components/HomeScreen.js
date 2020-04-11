@@ -31,7 +31,8 @@ class HomeScreen extends Component {
                                     <div key={index} className='home_logo_link'
                                         style={{ cursor: "pointer" }}>
                                         <Link to={`/view/${logo._id}`}>
-                                            <button type="button" class="btn btn-outline-dark">
+                                            <button type="button" class="btn btn-outline-dark"
+                                            style = {{fontSize: "20px"}}>
                                             {logo.text}
                                             </button></Link>
                                     </div>
@@ -44,7 +45,8 @@ class HomeScreen extends Component {
                                 </div>
                                 <div>
                                     <Link id="add_logo_button" to="/create">
-                                        <button type="button" class="btn btn-outline-primary">
+                                        <button type="button" class="btn btn-outline-primary"
+                                        style= {{fontSize: "36px"}}>
                                         Add Logo
                                         </button></Link>
                                 </div>
