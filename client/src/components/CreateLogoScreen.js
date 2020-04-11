@@ -30,7 +30,22 @@ const ADD_LOGO = gql`
 `;
 
 class CreateLogoScreen extends Component {
-
+    constructor() {
+        super();
+        this.state = {
+            logo: {
+                text: null,
+                color: "#000000",
+                backgroundColor: "#ffffff",
+                borderColor: "#000000",
+                borderRadius: null,
+                borderWidth: null,
+                padding: null,
+                margin: null
+            },
+            activated: false
+        }
+    }
     render() {
         let text, color, fontSize,backgroundColor, borderColor, borderRadius, borderWidth, padding, margin;
         return (
@@ -66,60 +81,94 @@ class CreateLogoScreen extends Component {
                                                 <label htmlFor="text">Text:</label>
                                                 <input type="text" className="form-control" name="text" ref={node => {
                                                     text = node;
-                                                }} placeholder="Text" />
+                                                }} placeholder="Text" 
+                                                onChange = {(e) => this.setState({logo: {text: e.target.value, color: this.state.logo.color, fontSize: this.state.logo.fontSize, backgroundColor: this.state.logo.backgroundColor,
+                                                    borderColor: this.state.logo.borderColor, borderRadius: this.state.logo.borderRadius, borderWidth: this.state.logo.borderWidth,
+                                                    padding: this.state.logo.padding, margin: this.state.logo.margin}}, console.log(this.state.logo))}/>
                                             </div>
                                             <div className="form-group">
                                                 <label htmlFor="color">Color:</label>
                                                 <input type="color" className="form-control" name="color" ref={node => {
                                                     color = node;
-                                                }} placeholder="Color" />
+                                                }} placeholder="Color" 
+                                                onChange = {(e) => this.setState({logo: {text: this.state.logo.text, color: e.target.value, fontSize: this.state.logo.fontSize, backgroundColor: this.state.logo.backgroundColor,
+                                                    borderColor: this.state.logo.borderColor, borderRadius: this.state.logo.borderRadius, borderWidth: this.state.logo.borderWidth,
+                                                    padding: this.state.logo.padding, margin: this.state.logo.margin}})}/>
                                             </div>
                                             <div className="form-group">
                                                 <label htmlFor="fontSize">Font Size:</label>
                                                 <input type="number" className="form-control" name="fontSize" min="0" max="100" ref={node => {
                                                     fontSize = node;
-                                                }} placeholder="Font Size" />
+                                                }} placeholder="Font Size" 
+                                                onChange = {(e) => this.setState({logo: {text: this.state.logo.text, color: this.state.logo.color, fontSize: e.target.value, backgroundColor: this.state.logo.backgroundColor,
+                                                    borderColor: this.state.logo.borderColor, borderRadius: this.state.logo.borderRadius, borderWidth: this.state.logo.borderWidth,
+                                                    padding: this.state.logo.padding, margin: this.state.logo.margin}}, console.log(e.target.value))}/>
                                             </div>
                                             <div className="form-group">
                                                 <label htmlFor="backgroundColor">Background Color:</label>
                                                 <input type="color" className="form-control" name="backgroundColor" ref={node => {
                                                     backgroundColor = node;
-                                                }} placeholder="BackgroundColor"/>
+                                                }} placeholder="BackgroundColor"
+                                                onChange = {(e) => this.setState({logo: {text: this.state.logo.text, color: this.state.logo.color, fontSize: this.state.logo.fontSize, backgroundColor: e.target.value,
+                                                    borderColor: this.state.logo.borderColor, borderRadius: this.state.logo.borderRadius, borderWidth: this.state.logo.borderWidth,
+                                                    padding: this.state.logo.padding, margin: this.state.logo.margin}})}/>
                                             </div>
                                             <div className="form-group">
                                                 <label htmlFor="borderColor">Border Color:</label>
                                                 <input type="color" className="form-control" name="borderColor" ref={node => {
                                                     borderColor = node;
-                                                }} placeholder = "Border Color"/>
+                                                }} placeholder = "Border Color"
+                                                onChange = {(e) => this.setState({logo: {text: this.state.logo.text, color: this.state.logo.color, fontSize: this.state.logo.fontSize, backgroundColor: this.state.logo.backgroundColor,
+                                                    borderColor: e.target.value, borderRadius: this.state.logo.borderRadius, borderWidth: this.state.logo.borderWidth,
+                                                    padding: this.state.logo.padding, margin: this.state.logo.margin}})}/>
                                             </div>
                                             <div className="form-group">
                                                 <label htmlFor="borderRadius">Border Radius:</label>
                                                 <input type="number" className="form-control" name="borderRadius" min="0" max="100" ref={node => {
                                                     borderRadius=node;
-                                                }} placeholder = "Border Radius"/>
+                                                }} placeholder = "Border Radius"
+                                                onChange = {(e) => this.setState({logo: {text: this.state.logo.text, color: this.state.logo.color, fontSize: this.state.logo.fontSize, backgroundColor: this.state.logo.backgroundColor,
+                                                    borderColor: this.state.logo.borderColor, borderRadius: e.target.value, borderWidth: this.state.logo.borderWidth,
+                                                    padding: this.state.logo.padding, margin: this.state.logo.margin}})}/>
                                             </div>
                                             <div className="form-group">
                                                 <label htmlFor="borderWidth">Border Width:</label>
                                                 <input type="number" className="form-control" name="borderWidth" min="0" max="100" ref={node => {
                                                     borderWidth=node;
-                                                }} placeholder = "Border Width"/>
+                                                }} placeholder = "Border Width"
+                                                onChange = {(e) => this.setState({logo: {text: this.state.logo.text, color: this.state.logo.color, fontSize: this.state.logo.fontSize, backgroundColor: this.state.logo.backgroundColor,
+                                                    borderColor: this.state.logo.borderColor, borderRadius: this.state.logo.borderRadius, borderWidth: e.target.value,
+                                                    padding: this.state.logo.padding, margin: this.state.logo.margin}})}/>
                                             </div>
                                             <div className="form-group">
                                                 <label htmlFor="Padding">Padding:</label>
                                                 <input type="number" className="form-control" name="padding" min="0" max="100" ref={node => {
                                                     padding=node;
-                                                }} placeholder = "Padding"/>
+                                                }} placeholder = "Padding"
+                                                onChange = {(e) => this.setState({logo: {text: this.state.logo.text, color: this.state.logo.color, fontSize: this.state.logo.fontSize, backgroundColor: this.state.logo.backgroundColor,
+                                                    borderColor: this.state.logo.borderColor, borderRadius: this.state.logo.borderRadius, borderWidth: this.state.logo.borderWidth,
+                                                    padding: e.target.value, margin: this.state.logo.margin}})}/>
                                             </div>
                                             <div className="form-group">
                                                 <label htmlFor="Margin">Margin:</label>
                                                 <input type="number" className="form-control" name="margin" min="0" max="100" ref={node => {
                                                     margin=node;
-                                                }} placeholder = "Margin"/>
+                                                }} placeholder = "Margin"
+                                                onChange = {(e) => this.setState({logo: {text: this.state.logo.text, color: this.state.logo.color, fontSize: this.state.logo.fontSize, backgroundColor: this.state.logo.backgroundColor,
+                                                    borderColor: this.state.logo.borderColor, borderRadius: this.state.logo.borderRadius, borderWidth: this.state.logo.borderWidth,
+                                                    padding: this.state.logo.padding, margin: e.target.value}})}/>
                                             </div>
                                             <div class = "col-sm">
                                                 <center>
                                                 </center>
                                             </div>
+                                        </div>
+                                        <div class = "col-sm" id="logoEdit" style={{margin: "0 auto", width: "max-content"}}>
+                                            <center style = {{color: this.state.logo.color, fontSize: this.state.logo.fontSize + "px", backgroundColor: this.state.logo.backgroundColor,
+                                                    borderColor: this.state.logo.borderColor, borderRadius: this.state.logo.borderRadius +"px", borderWidth: this.state.logo.borderWidth +"px",
+                                                    padding: this.state.logo.padding +"px", margin: this.state.logo.margin +"px", borderStyle: "solid", width: "max-content"}}>
+                                                {this.state.logo.text}
+                                            </center>
                                         </div>
                                     </div>
                                     <button type="submit" className="btn btn-success">Submit</button>

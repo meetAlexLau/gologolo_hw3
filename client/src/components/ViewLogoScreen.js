@@ -92,10 +92,10 @@ class ViewLogoScreen extends Component {
                                             )}
                                         </Mutation>
                                     </div>
-                                    <div class = "col-sm">
+                                    <div class = "col-sm" style={{margin: "0 auto", width: "max-content"}}>
                                         <center style = {{color: data.logo.color, fontSize: data.logo.fontSize, backgroundColor: data.logo.backgroundColor,
                                                                 borderColor: data.logo.borderColor, borderRadius: data.logo.borderRadius, borderWidth: data.logo.borderWidth,
-                                                                padding: data.logo.padding, margin: data.logo.margin, borderStyle: "solid"}}>
+                                                                padding: data.logo.padding, margin: data.logo.margin, borderStyle: "solid", width: "max-content"}}>
                                             {data.logo.text}
                                         </center>
                                     </div>
