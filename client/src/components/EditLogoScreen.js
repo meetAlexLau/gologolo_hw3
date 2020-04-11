@@ -145,7 +145,7 @@ class EditLogoScreen extends Component {
                                                             onChange = {(e) => this.setState({logo: {text: this.state.logo.text, color: this.state.logo.color, fontSize: this.state.logo.fontSize, backgroundColor: e.target.value,
                                                                 borderColor: this.state.logo.borderColor, borderRadius: this.state.logo.borderRadius, borderWidth: this.state.logo.borderWidth,
                                                                 padding: this.state.logo.padding, margin: this.state.logo.margin}})}
-                                                             placeholder="BackgroundColor" defaultValue={this.state.logo.backgroundColor}/>
+                                                             placeholder="Background Color" defaultValue={data.logo.backgroundColor}/>
                                                         </div>
                                                         <div className="form-group">
                                                             <label htmlFor="borderColor">Border Color:</label>
@@ -191,10 +191,10 @@ class EditLogoScreen extends Component {
                                                         <button type="submit" className="btn btn-success">Submit</button>
                                                     </div>
 
-                                                    <div class = "col-sm" id="logoEdit" >
+                                                    <div class = "col-sm" id="logoEdit" style={{margin: "0 auto", width: "max-content"}}>
                                                         <center style = {{color: this.state.logo.color, fontSize: this.state.logo.fontSize + "px", backgroundColor: this.state.logo.backgroundColor,
                                                                 borderColor: this.state.logo.borderColor, borderRadius: this.state.logo.borderRadius +"px", borderWidth: this.state.logo.borderWidth +"px",
-                                                                padding: this.state.logo.padding +"px", margin: this.state.logo.margin +"px", borderStyle: "solid"}}>
+                                                                padding: this.state.logo.padding +"px", margin: this.state.logo.margin +"px", borderStyle: "solid", width: "max-content"}}>
                                                             {this.state.logo.text}
                                                         </center>
                                                     </div>
