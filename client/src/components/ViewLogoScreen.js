@@ -51,7 +51,7 @@ class ViewLogoScreen extends Component {
                                     </h3>
                                 </div>
                                 <div class = "row">
-                                    <div class = "col-sm-3">
+                                    <div class = "col-sm-2">
                                         <dl>
                                             <dt>Text:</dt>
                                             <dd>{data.logo.text}</dd>

@@ -60,59 +60,67 @@ class CreateLogoScreen extends Component {
                                     padding.value = "";
                                     margin.value = "";                                    
                                 }}>
-                                    <div className="form-group">
-                                        <label htmlFor="text">Text:</label>
-                                        <input type="text" className="form-control" name="text" ref={node => {
-                                            text = node;
-                                        }} placeholder="Text" />
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="color">Color:</label>
-                                        <input type="color" className="form-control" name="color" ref={node => {
-                                            color = node;
-                                        }} placeholder="Color" />
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="fontSize">Font Size:</label>
-                                        <input type="number" className="form-control" name="fontSize" ref={node => {
-                                            fontSize = node;
-                                        }} placeholder="Font Size" />
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="backgroundColor">Background Color:</label>
-                                        <input type="color" className="form-control" name="backgroundColor" ref={node => {
-                                            backgroundColor = node;
-                                        }} placeholder="BackgroundColor"/>
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="borderColor">Border Color:</label>
-                                        <input type="color" className="form-control" name="borderColor" ref={node => {
-                                            borderColor = node;
-                                        }} placeholder = "Border Color"/>
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="borderRadius">Border Radius:</label>
-                                        <input type="text" className="form-control" name="borderRadius" ref={node => {
-                                            borderRadius=node;
-                                        }} placeholder = "Border Radius"/>
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="borderWidth">Border Width:</label>
-                                        <input type="text" className="form-control" name="borderWidth" ref={node => {
-                                            borderWidth=node;
-                                        }} placeholder = "Border Width"/>
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="Padding">Padding:</label>
-                                        <input type="text" className="form-control" name="padding" ref={node => {
-                                            padding=node;
-                                        }} placeholder = "Padding"/>
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="Margin">Margin:</label>
-                                        <input type="text" className="form-control" name="margin" ref={node => {
-                                            margin=node;
-                                        }} placeholder = "Margin"/>
+                                    <div class="row">
+                                        <div class = "col-sm-2">
+                                            <div className="form-group">
+                                                <label htmlFor="text">Text:</label>
+                                                <input type="text" className="form-control" name="text" ref={node => {
+                                                    text = node;
+                                                }} placeholder="Text" />
+                                            </div>
+                                            <div className="form-group">
+                                                <label htmlFor="color">Color:</label>
+                                                <input type="color" className="form-control" name="color" ref={node => {
+                                                    color = node;
+                                                }} placeholder="Color" />
+                                            </div>
+                                            <div className="form-group">
+                                                <label htmlFor="fontSize">Font Size:</label>
+                                                <input type="number" className="form-control" name="fontSize" min="0" max="100" ref={node => {
+                                                    fontSize = node;
+                                                }} placeholder="Font Size" />
+                                            </div>
+                                            <div className="form-group">
+                                                <label htmlFor="backgroundColor">Background Color:</label>
+                                                <input type="color" className="form-control" name="backgroundColor" ref={node => {
+                                                    backgroundColor = node;
+                                                }} placeholder="BackgroundColor"/>
+                                            </div>
+                                            <div className="form-group">
+                                                <label htmlFor="borderColor">Border Color:</label>
+                                                <input type="color" className="form-control" name="borderColor" ref={node => {
+                                                    borderColor = node;
+                                                }} placeholder = "Border Color"/>
+                                            </div>
+                                            <div className="form-group">
+                                                <label htmlFor="borderRadius">Border Radius:</label>
+                                                <input type="number" className="form-control" name="borderRadius" min="0" max="100" ref={node => {
+                                                    borderRadius=node;
+                                                }} placeholder = "Border Radius"/>
+                                            </div>
+                                            <div className="form-group">
+                                                <label htmlFor="borderWidth">Border Width:</label>
+                                                <input type="number" className="form-control" name="borderWidth" min="0" max="100" ref={node => {
+                                                    borderWidth=node;
+                                                }} placeholder = "Border Width"/>
+                                            </div>
+                                            <div className="form-group">
+                                                <label htmlFor="Padding">Padding:</label>
+                                                <input type="number" className="form-control" name="padding" min="0" max="100" ref={node => {
+                                                    padding=node;
+                                                }} placeholder = "Padding"/>
+                                            </div>
+                                            <div className="form-group">
+                                                <label htmlFor="Margin">Margin:</label>
+                                                <input type="number" className="form-control" name="margin" min="0" max="100" ref={node => {
+                                                    margin=node;
+                                                }} placeholder = "Margin"/>
+                                            </div>
+                                            <div class = "col-sm">
+                                                <center>
+                                                </center>
+                                            </div>
+                                        </div>
                                     </div>
                                     <button type="submit" className="btn btn-success">Submit</button>
                                 </form>
